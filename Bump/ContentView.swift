@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var BTModel = PhoneBluetoothModel()
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
