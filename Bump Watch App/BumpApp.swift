@@ -11,7 +11,8 @@ import SwiftUI
 struct Bump_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            AccelerometerView()
         }
     }
 }

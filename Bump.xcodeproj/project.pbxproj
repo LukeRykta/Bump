@@ -16,6 +16,10 @@
 		5E4E51A729CF8D0D0088E5F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4E51A629CF8D0D0088E5F6 /* ContentView.swift */; };
 		5E4E51A929CF8D0E0088E5F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4E51A829CF8D0E0088E5F6 /* Assets.xcassets */; };
 		5E4E51AC29CF8D0E0088E5F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4E51AB29CF8D0E0088E5F6 /* Preview Assets.xcassets */; };
+		759A555D29CFB89C008B6345 /* PhoneBluetoothModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A555B29CFB89C008B6345 /* PhoneBluetoothModel.swift */; };
+		759A555E29CFB89C008B6345 /* PhoneTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A555C29CFB89C008B6345 /* PhoneTransferService.swift */; };
+		759A556129CFB8B2008B6345 /* WatchBluetoothModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A555F29CFB8B1008B6345 /* WatchBluetoothModel.swift */; };
+		759A556229CFB8B2008B6345 /* WatchTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A556029CFB8B2008B6345 /* WatchTransferService.swift */; };
 		75C3038029CF8ECA00BCED9D /* AccelerometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */; };
 		B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532229CF90FD00F8BADF /* SplashView.swift */; };
 		B5B7532629CF975700F8BADF /* WatchSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532529CF975700F8BADF /* WatchSplashView.swift */; };
@@ -60,6 +64,11 @@
 		5E4E51A629CF8D0D0088E5F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5E4E51A829CF8D0E0088E5F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E4E51AB29CF8D0E0088E5F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E4E51BA29CFACCB0088E5F6 /* Bump-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Bump-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		759A555B29CFB89C008B6345 /* PhoneBluetoothModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneBluetoothModel.swift; sourceTree = "<group>"; };
+		759A555C29CFB89C008B6345 /* PhoneTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneTransferService.swift; sourceTree = "<group>"; };
+		759A555F29CFB8B1008B6345 /* WatchBluetoothModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchBluetoothModel.swift; sourceTree = "<group>"; };
+		759A556029CFB8B2008B6345 /* WatchTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchTransferService.swift; sourceTree = "<group>"; };
 		75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerView.swift; sourceTree = "<group>"; };
 		B5B7532229CF90FD00F8BADF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B5B7532529CF975700F8BADF /* WatchSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSplashView.swift; sourceTree = "<group>"; };
@@ -108,10 +117,15 @@
 		5E4E519129CF8D0C0088E5F6 /* Bump */ = {
 			isa = PBXGroup;
 			children = (
+
 				B5B7532D29CFAB8800F8BADF /* Model */,
 				B5B7532129CF90EF00F8BADF /* Views */,
+
+
 				5E4E519229CF8D0C0088E5F6 /* BumpApp.swift */,
 				5E4E519429CF8D0C0088E5F6 /* ContentView.swift */,
+				759A555A29CFB841008B6345 /* Bluetooth */,
+				B5B7532129CF90EF00F8BADF /* Views */,
 				5E4E519629CF8D0D0088E5F6 /* Assets.xcassets */,
 				5E4E519829CF8D0D0088E5F6 /* Preview Content */,
 			);
@@ -129,11 +143,12 @@
 		5E4E51A329CF8D0D0088E5F6 /* Bump Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				B5B7532429CF974000F8BADF /* WatchViews */,
+				5E4E51BA29CFACCB0088E5F6 /* Bump-Watch-App-Info.plist */,
 				5E4E51A429CF8D0D0088E5F6 /* BumpApp.swift */,
-				5E4E51A629CF8D0D0088E5F6 /* ContentView.swift */,
-				75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */,
+				B5B7532429CF974000F8BADF /* WatchViews */,
+				5E4E51B729CF9F080088E5F6 /* Views */,
 				5E4E51A829CF8D0E0088E5F6 /* Assets.xcassets */,
+				759A555929CFB714008B6345 /* BluetoothWatchApp */,
 				5E4E51AA29CF8D0E0088E5F6 /* Preview Content */,
 			);
 			path = "Bump Watch App";
@@ -145,6 +160,33 @@
 				5E4E51AB29CF8D0E0088E5F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5E4E51B729CF9F080088E5F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E4E51A629CF8D0D0088E5F6 /* ContentView.swift */,
+				75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		759A555929CFB714008B6345 /* BluetoothWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				759A555F29CFB8B1008B6345 /* WatchBluetoothModel.swift */,
+				759A556029CFB8B2008B6345 /* WatchTransferService.swift */,
+			);
+			path = BluetoothWatchApp;
+			sourceTree = "<group>";
+		};
+		759A555A29CFB841008B6345 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				759A555B29CFB89C008B6345 /* PhoneBluetoothModel.swift */,
+				759A555C29CFB89C008B6345 /* PhoneTransferService.swift */,
+			);
+			path = Bluetooth;
 			sourceTree = "<group>";
 		};
 		B5B7532129CF90EF00F8BADF /* Views */ = {
@@ -277,12 +319,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4E519529CF8D0C0088E5F6 /* ContentView.swift in Sources */,
+
 				B5B7532A29CFA57E00F8BADF /* CircleView.swift in Sources */,
 				B5B7532829CFA13000F8BADF /* HomeView.swift in Sources */,
 				5E4E519329CF8D0C0088E5F6 /* BumpApp.swift in Sources */,
 				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
 				B5B7532C29CFA7AA00F8BADF /* UserEditView.swift in Sources */,
 				B5B7532F29CFABA500F8BADF /* User.swift in Sources */,
+
+				759A555D29CFB89C008B6345 /* PhoneBluetoothModel.swift in Sources */,
+				5E4E519329CF8D0C0088E5F6 /* BumpApp.swift in Sources */,
+				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
+				759A555E29CFB89C008B6345 /* PhoneTransferService.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +340,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				75C3038029CF8ECA00BCED9D /* AccelerometerView.swift in Sources */,
+				759A556129CFB8B2008B6345 /* WatchBluetoothModel.swift in Sources */,
 				B5B7532629CF975700F8BADF /* WatchSplashView.swift in Sources */,
 				5E4E51A729CF8D0D0088E5F6 /* ContentView.swift in Sources */,
+				759A556229CFB8B2008B6345 /* WatchTransferService.swift in Sources */,
 				5E4E51A529CF8D0D0088E5F6 /* BumpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,15 +479,16 @@
 				DEVELOPMENT_TEAM = GPM74XSJN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -458,15 +510,16 @@
 				DEVELOPMENT_TEAM = GPM74XSJN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -502,7 +555,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -535,7 +588,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
