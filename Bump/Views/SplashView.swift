@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashView: View {
     @State private var isActive = false
-    @State private var size = 1.3
+    @State private var size = 0.80
     
     var body: some View {
         if isActive {
@@ -17,14 +17,13 @@ struct SplashView: View {
         } else {
             VStack{
                 VStack(alignment: .center){
-                    Image("fistbumpjake")
+                    Image("gojo")
                         .resizable()
-                        .frame(width: 600, height: 1300)
                 }
                 .scaleEffect(size,anchor: .center)
                 .onAppear{
-                    withAnimation(.easeOut(duration: 3.2)){
-                        self.size = 0.699
+                    withAnimation(.easeOut(duration: 2.2)){
+                        self.size = 0.42
                     }
                 }
             }
