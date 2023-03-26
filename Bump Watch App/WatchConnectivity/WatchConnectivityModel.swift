@@ -9,10 +9,10 @@ import Foundation
 import WatchConnectivity
 
 
-class WatchSession : NSObject, WCSessionDelegate{
+class WatchSession : NSObject, WCSessionDelegate, ObservableObject{
     
-    @Published var newContactMessage = ""
-    @Published var userPhoneNumber = ""
+    @Published var newContactMessage : String = ""
+    @Published var userPhoneNumber : String = ""
     
     var session: WCSession
     
@@ -27,7 +27,7 @@ class WatchSession : NSObject, WCSessionDelegate{
     }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async {
-            self.userPhoneNumber = message["message"] as? String ?? "Unknown"
+            self.userPhoneNumber = message["message"] as! String
         }
     }
 }

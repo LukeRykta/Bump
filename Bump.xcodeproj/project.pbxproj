@@ -156,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				759A556D29D05152008B6345 /* Model */,
-				CAE834F929CFD10800F8BC6E /* WatchHaptic */,
 				5E4E51BA29CFACCB0088E5F6 /* Bump-Watch-App-Info.plist */,
 				5E4E51A429CF8D0D0088E5F6 /* BumpApp.swift */,
 				CAE834F929CFD10800F8BC6E /* WatchHaptic */,
@@ -538,7 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = BFAYZ52TYC;
+				DEVELOPMENT_TEAM = GPM74XSJN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
@@ -546,13 +545,13 @@
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = done;
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = hello;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump10;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -571,7 +570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = BFAYZ52TYC;
+				DEVELOPMENT_TEAM = GPM74XSJN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
@@ -579,13 +578,13 @@
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = done;
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = hello;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump10;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -606,7 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = BFAYZ52TYC;
+				DEVELOPMENT_TEAM = GPM74XSJN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
@@ -622,7 +621,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -640,7 +639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = BFAYZ52TYC;
+				DEVELOPMENT_TEAM = GPM74XSJN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
@@ -656,7 +655,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
