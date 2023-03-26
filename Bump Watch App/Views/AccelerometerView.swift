@@ -43,66 +43,66 @@ struct AccelerometerView: View {
             Text(status)
             Text(BTtext)
         }.onAppear{
-//            session.start()
-                if self.manager.isAccelerometerAvailable == true {
-                    self.manager.startAccelerometerUpdates(to: self.queue){
-                        (data: CMAccelerometerData?,error: Error?) in
-                        
-                        let accelerometer: CMAcceleration = data!.acceleration
-                        x = accelerometer.x
-                        print(x)
-                        
-                        //Detect a peak based on the value of the accelerometer x-axis.
-                        if (peakFlag == false && x > pthresholdMin && x < pthresholdMax){
-                            peakFlag = true
-                            status = "Peak detected"
-                        }
-                        
-                        //Start counting the latency between the peak and valley.
-                        else if(peakFlag == true && x > vthresholdMin){
-                            latency += 1
-                            status = "Waiting for valley"
-                        }
-                        
-                        //Detect valley and finish accelerometer updates.
-                        
-                        else if (peakFlag == true && x < vthresholdMin && x > vthresholdMax && latency <= maxLatency){
-                            valleyFlag = true
-                            status = "Detected a bump, Initializing connection"
-                            self.manager.stopAccelerometerUpdates()
-                            //BTModel.retrievePeripheral()
-                            BTtext = BTModel.messageText
-                            //let defaultContact = Contact(phoneNumber: "0000000000", firstName: "John", lastName: "Doe", email: "west@gmail.com")
-                            
-                            let newContact: Contact = transferStringtoContact(contactString: BTModel.messageText)
-                            
-                            if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) {
-                                print("Hit the if - for a different contact")
-                                //Continue searching for signals
-                                //BTModel.retrievePeripheral()
-                                BTModel.startScanning()
-                            }else{
-                                print(BTtext)
-                                print("Hit the else - for a different contact")
-                                WatchHapticManager.shared.playHaptic()
-                                //Send message via WatchConnectivity to Phone
-                                sendMessageWatchConnect(message: BTModel.messageText, model: watchConnectionSession)
-                            }
-                        }
-                        
-                        
-                        //If we are outside of our window reset our states.
-                        if (latency > maxLatency){
-                            peakFlag = false
-                            valleyFlag = false
-                            latency = 0
-                        }
-                        print(status)
+            //            session.start()
+            if self.manager.isAccelerometerAvailable == true {
+                self.manager.startAccelerometerUpdates(to: self.queue){
+                    (data: CMAccelerometerData?,error: Error?) in
+                    
+                    let accelerometer: CMAcceleration = data!.acceleration
+                    x = accelerometer.x
+                    print(x)
+                    
+                    //Detect a peak based on the value of the accelerometer x-axis.
+                    if (peakFlag == false && x > pthresholdMin && x < pthresholdMax){
+                        peakFlag = true
+                        status = "Peak detected"
                     }
+                    
+                    //Start counting the latency between the peak and valley.
+                    else if(peakFlag == true && x > vthresholdMin){
+                        latency += 1
+                        status = "Waiting for valley"
+                    }
+                    
+                    //Detect valley and finish accelerometer updates.
+                    
+                    else if (peakFlag == true && x < vthresholdMin && x > vthresholdMax && latency <= maxLatency){
+                        valleyFlag = true
+                        status = "Detected a bump, Initializing connection"
+                        self.manager.stopAccelerometerUpdates()
+                        //BTModel.retrievePeripheral()
+                        BTtext = BTModel.messageText
+                        //let defaultContact = Contact(phoneNumber: "0000000000", firstName: "John", lastName: "Doe", email: "west@gmail.com")
+                        
+                        let newContact: Contact = transferStringtoContact(contactString: BTModel.messageText)
+                        
+                        if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) {
+                            print("Hit the if - for a different contact")
+                            //Continue searching for signals
+                            //BTModel.retrievePeripheral()
+                            BTModel.startScanning()
+                        }else{
+                            print(BTtext)
+                            print("Hit the else - for a different contact")
+                            WatchHapticManager.shared.playHaptic()
+                            //Send message via WatchConnectivity to Phone
+                            sendMessageWatchConnect(message: BTModel.messageText, model: watchConnectionSession)
+                        }
+                    }
+                    
+                    
+                    //If we are outside of our window reset our states.
+                    if (latency > maxLatency){
+                        peakFlag = false
+                        valleyFlag = false
+                        latency = 0
+                    }
+                    print(status)
                 }
-                else {
-                    self.status = "Not Available"
-                }
+            }
+            else {
+                self.status = "Not Available"
+            }
         }
     }
 }
