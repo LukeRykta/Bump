@@ -71,10 +71,15 @@ struct AccelerometerView: View {
                         status = "Detected a bump, Initializing connection"
                         self.manager.stopAccelerometerUpdates()
                         //BTModel.retrievePeripheral()
-                        BTtext = BTModel.messageText
+                        if BTModel.messageText.isEmpty{
+                            BTtext = String(",,,,")
+                        }
+                        else{
+                            BTtext = BTModel.messageText
+                        }
                         //let defaultContact = Contact(phoneNumber: "0000000000", firstName: "John", lastName: "Doe", email: "west@gmail.com")
                         
-                        let newContact: Contact = transferStringtoContact(contactString: BTModel.messageText)
+                        let newContact: Contact = transferStringtoContact(contactString: BTtext)
                         
                         if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) {
                             print("Hit the if - for a different contact")
