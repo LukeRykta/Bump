@@ -84,7 +84,6 @@ class WatchBluetoothModel: NSObject, ObservableObject {
             discoveredPeripheral.writeValue(packetData, for: transferCharacteristic, type: .withoutResponse)
             
             writeIterationsComplete += 1
-            
         }
         
         if writeIterationsComplete == defaultIterations {
