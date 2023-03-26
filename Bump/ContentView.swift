@@ -39,6 +39,8 @@ struct ContentView: View {
                     else {
                         print("stop advertising")
                         BTModel.peripheralManager.stopAdvertising()
+                        let newPerson: Person = transferStringtoPerson(WKModel.newContactMessage)
+                        saveContact(person: newPerson)
                     }
                 }
                 .padding()
