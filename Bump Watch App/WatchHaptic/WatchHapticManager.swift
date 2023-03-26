@@ -15,6 +15,6 @@ class WatchHapticManager {
     private init() {}
     
     func playHaptic() {
-        WKInterfaceDevice.current().play(.click)
+        WKInterfaceDevice.current().play(.success)
     }
 }
