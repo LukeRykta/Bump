@@ -27,7 +27,7 @@ struct UserCardView: View {
             }
             VStack(spacing: 0.0){
                 HStack(){
-                    Text(person.firstName+""+person.lastName)
+                    Text(person.firstName+" "+person.lastName)
                         .fontWeight(.bold)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

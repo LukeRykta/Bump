@@ -11,7 +11,7 @@ import SwiftUI
 struct BumpApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FirstInstallView()
         }
     }
 }
