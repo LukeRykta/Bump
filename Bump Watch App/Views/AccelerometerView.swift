@@ -79,6 +79,7 @@ struct AccelerometerView: View {
                             print(BTtext)
                             WatchHapticManager.shared.playHaptic()
                             //Send message via WatchConnectivity to Phone
+                            sendMessageWatchConnect(message: BTModel.messageText, model: watchConnectionSession)
                         }
                         
                         

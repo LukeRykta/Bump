@@ -36,4 +36,4 @@ func sendMessageWatchConnect(message: String, model: WatchSession) {
             (error) in
             print(error.localizedDescription)
         }
-    }
+}
