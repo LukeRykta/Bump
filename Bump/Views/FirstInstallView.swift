@@ -30,7 +30,7 @@ struct FirstInstallView: View {
        @AppStorage("userInfo") var userInfo: String?
        
        var body: some View {
-           if firstTimeUser{
+           if firstTimeUser {
                ContentView()
            }else{
                NavigationStack(){

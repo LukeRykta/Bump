@@ -83,11 +83,8 @@ struct AccelerometerView: View {
             else {
                 self.status = "Not Available"
             }
-        }.onDisappear(){
-           // BTModel.cleanup()
         }
     }
-    
 }
 
 struct AccelerometerView_Previews: PreviewProvider {
