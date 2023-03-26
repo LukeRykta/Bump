@@ -12,8 +12,9 @@ struct Person{
     let firstName: String
     let lastName: String
     let emailAddress: String
-    let phoneNumber: Int
+    var phoneNumber: String
+    let note: String
 }
 
-let person1 = Person(profileImage: "person1", firstName: "Wesley", lastName: "Jackson", emailAddress: "wes.jackson@gmail.com", phoneNumber: 3183470543)
-let person2 = Person(profileImage: "person2", firstName: "Ashley", lastName: "Makin", emailAddress: "ash.makin@gmail.com", phoneNumber: 2102227890)
+let person1 = Person(profileImage: "person1", firstName: "Wesley", lastName: "Jackson", emailAddress: "wes.jackson@gmail.com", phoneNumber: "3183470543", note: "Notes section of the app!")
+let person2 = Person(profileImage: "person2", firstName: "Ashley", lastName: "Makin", emailAddress: "ash.makin@gmail.com", phoneNumber: "2102227890", note: "Call me maybe!")
