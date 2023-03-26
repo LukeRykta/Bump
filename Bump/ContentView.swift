@@ -8,11 +8,9 @@ import SwiftUI
 import CoreBluetooth
 
 struct ContentView: View {
-    
-    @State private var isOn = false
-    
+   
     @ObservedObject private var BTModel = PhoneBluetoothModel()
-
+    @State private var isOn = true
     
     var body: some View {
         VStack {

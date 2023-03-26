@@ -10,7 +10,7 @@ import os
 
 class PhoneBluetoothModel: NSObject, ObservableObject {
     
-    @Published var messageText: String = "This is a message sent from a phone via Bluetooth"
+    @Published var messageText: String = "Hi Josh!!!"
     
     var peripheralManager: CBPeripheralManager!
     
@@ -22,7 +22,7 @@ class PhoneBluetoothModel: NSObject, ObservableObject {
     
     override init(){
         super.init()
-        self.peripheralManager = CBPeripheralManager(delegate: delegate, queue: nil)
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: [CBPeripheralManagerOptionShowPowerAlertKey: true])
     }
         /*
      *  Sends the next amount of data to the connected central

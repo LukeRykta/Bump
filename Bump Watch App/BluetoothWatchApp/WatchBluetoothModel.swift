@@ -11,7 +11,7 @@ import os
 
 class WatchBluetoothModel: NSObject, ObservableObject {
 
-    @Published var messageText: String = "No message recieved yet..."
+    @Published var messageText: String = "<EMPTY>"
     
     private var centralManager: CBCentralManager!
 
