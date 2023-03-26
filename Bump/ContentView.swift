@@ -15,13 +15,7 @@ struct ContentView: View {
     let userDefaults = UserDefaults.standard
 
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!!")
-        }
-        .padding()
+        HomeView()
         HStack{
             Toggle("Advertise as Peripheral", isOn: $isOn)
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
