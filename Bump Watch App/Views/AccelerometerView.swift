@@ -73,11 +73,17 @@ struct AccelerometerView: View {
                         BTtext = BTModel.messageText
                         //Parse BTModel.messageText
                         let newContact = transferStringtoContact(contactString: BTModel.messageText)
+                        
+                        //let test = "\n" + newContact.phoneNumber
                         print("new contact: \(newContact.phoneNumber)")
                         print("SELF \(watchConnectionSession.userPhoneNumber)")
-                        if newContact.phoneNumber == self.watchConnectionSession.userPhoneNumber{
+                        
+                        if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) || self.watchConnectionSession.userPhoneNumber == "" {
                             print("Hit the if - for a different contact")
                             //Continue searching for signals
+                            BTModel.cleanup()
+                            BTModel.retrievePeripheral()
+                        
                         }else{
                             print(BTtext)
                             print("Hit the else - for a different contact")
