@@ -35,6 +35,7 @@ struct AccelerometerView: View {
                     x = "\(accelerometer.x)"
                     print(x)
                     if (accelerometer.x > test){
+                        WatchHapticManager.shared.playHaptic()
                         print("SURPASSED")
                     }
                 }
