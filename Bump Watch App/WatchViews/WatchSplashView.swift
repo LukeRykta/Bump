@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WatchSplashView: View {
     @State private var isActive = false
-    @State private var size = 0.80
+    @State private var size = 0.90
     
     let session = WKExtendedRuntimeSession()
     
@@ -21,12 +21,12 @@ struct WatchSplashView: View {
         } else {
             VStack{
                 VStack(alignment: .center){
-                    Image("gojo")
+                    Image("bumpLogo")
                         .resizable()
                 }
                 .scaleEffect(size,anchor: .center)
                 .onAppear{
-                    withAnimation(.easeOut(duration: 0.5)){
+                    withAnimation(.easeOut(duration: 1.5)){
                         self.size = 0.42
                     }
                 }
