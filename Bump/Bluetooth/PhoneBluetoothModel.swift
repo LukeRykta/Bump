@@ -10,7 +10,7 @@ import os
 
 class PhoneBluetoothModel: NSObject, ObservableObject {
     
-    @Published var messageText: String = "Hi Josh!!!"
+    @Published var messageText: String = ""
     
     var peripheralManager: CBPeripheralManager!
     

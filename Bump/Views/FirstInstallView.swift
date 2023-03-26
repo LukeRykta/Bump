@@ -10,6 +10,17 @@ import Contacts
 
 
 struct FirstInstallView: View {
+    
+//    func isValidEmail(_ email: String) -> Bool {
+//        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+//
+//        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+//        return emailPred.evaluate(with: email)
+//    }
+    
+        let emailAddressPredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+        let namePredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Za-z]{1,15}")
+        let numberPredicate = NSPredicate(format: "SELF MATCHES %@", "[0-9]{10}")
        @State private var firstTimeUser = false
        @State private var firstName = ""
        @State private var lastName = ""
@@ -40,11 +51,15 @@ struct FirstInstallView: View {
                                        Image(systemName: "keyboard.chevron.compact.down")
                                    }
                                
-                                   Button("Save") {
+                               Button("Save") {
+                                   if fieldValidation(){
                                        saveDefaultUser()
                                        printValues()
                                        haptic(.success)
+                                   }else{
+                                       print("Error: wrong format!")
                                    }
+                               }
                                
                                }
                            }
@@ -53,13 +68,29 @@ struct FirstInstallView: View {
                    }
            }
        }
+
+    
+    func fieldValidation()-> Bool{
+        
+        if emailAddressPredicate.evaluate(with: emailAddress) && !emailAddress.isEmpty &&
+           numberPredicate.evaluate(with: phoneNumber) && !phoneNumber.isEmpty &&
+           namePredicate.evaluate(with: firstName) && !firstName.isEmpty &&
+           namePredicate.evaluate(with: lastName) && !lastName.isEmpty{
+            
+            return true
+            
+        }else{
+            print("Error: wrong format!")
+            return false
+        }
+    }
        
        
        func saveDefaultUser(){
-           UserDefaults.standard.set(firstName, forKey: "userInfo")
-           UserDefaults.standard.set(lastName, forKey: "userInfo")
-           UserDefaults.standard.set(emailAddress, forKey: "userInfo")
-           UserDefaults.standard.set(phoneNumber, forKey: "userInfo")
+           UserDefaults.standard.set(firstName, forKey: "firstName")
+           UserDefaults.standard.set(lastName, forKey: "lastName")
+           UserDefaults.standard.set(emailAddress, forKey: "emailAddress")
+           UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
            contactPermission()
            firstTimeUser = true
        }
