@@ -44,7 +44,6 @@ struct AccelerometerView: View {
             Text(BTtext)
         }.onAppear{
 //            session.start()
-            
             if self.manager.isAccelerometerAvailable == true {
                 self.manager.startAccelerometerUpdates(to: self.queue){
                     (data: CMAccelerometerData?,error: Error?) in
@@ -72,8 +71,17 @@ struct AccelerometerView: View {
                         self.manager.stopAccelerometerUpdates()
                         //BTModel.retrievePeripheral()
                         BTtext = BTModel.messageText
-                        print(BTtext)
-                        WatchHapticManager.shared.playHaptic()
+                        //Parse BTModel.messageText
+                        var newContact = transferStringtoContact(contactString: BTModel.messageText)
+                        if newContact.phoneNumber == watchConnectionSession.userPhoneNumber{
+                            //Continue searching for signals
+                        }else{
+                            print(BTtext)
+                            WatchHapticManager.shared.playHaptic()
+                            //Send message via WatchConnectivity to Phone
+                        }
+                        
+                        
                     }
                     
                     //If we are outside of our window reset our states.

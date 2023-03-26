@@ -10,7 +10,8 @@ import CoreBluetooth
 struct ContentView: View {
    
     @ObservedObject private var BTModel = PhoneBluetoothModel()
-
+    @ObservedObject var WKModel = PhoneConnectivity()
+   
     @State private var isOn = false
     let userDefaults = UserDefaults.standard
 
@@ -27,7 +28,13 @@ struct ContentView: View {
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
                 .onChange(of: isOn){ value in
                     if value {
-
+                        //Setup and send userphoneNumber to Watch.
+                        WKModel.userPhoneNumber = userDefaults.string(forKey: "phoneNumber") ?? "0698675309"
+                        WKModel.session.sendMessage(["message": WKModel.userPhoneNumber], replyHandler: nil){
+                            (error) in
+                            print(error.localizedDescription)
+                        }
+                        
                         print("start advertising")
                         BTModel.messageText = "\(userDefaults.string(forKey: "phoneNumber") ?? "0698675309"),\(userDefaults.string(forKey: "firstName") ?? "John"),\(userDefaults.string(forKey: "lastName") ?? "John"),\(userDefaults.string(forKey: "emailAddress") ?? "john.doe@gmail.com")"
 

@@ -10,6 +10,10 @@ import WatchConnectivity
 
 
 class WatchSession : NSObject, WCSessionDelegate{
+    
+    @Published var newContactMessage = ""
+    @Published var userPhoneNumber = ""
+    
     var session: WCSession
     
     init(session: WCSession = .default) {
@@ -20,6 +24,11 @@ class WatchSession : NSObject, WCSessionDelegate{
     }
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
+    }
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        DispatchQueue.main.async {
+            self.userPhoneNumber = message["message"] as? String ?? "Unknown"
+        }
     }
 }
 func sendMessageWatchConnect(message: String, model: WatchSession) {
