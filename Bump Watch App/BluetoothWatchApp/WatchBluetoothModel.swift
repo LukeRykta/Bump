@@ -312,6 +312,7 @@ extension WatchBluetoothModel: CBPeripheralDelegate {
                 //Check the phone number if it matches
                 if newContact.phoneNumber == ownerContact.phoneNumber {
                     cleanup()
+                    
                 }
                 //If it doesn't, recieve the message and put it in the central manager
                 
