@@ -10,7 +10,7 @@ import CoreBluetooth
 struct ContentView: View {
    
     @ObservedObject private var BTModel = PhoneBluetoothModel()
-    @State private var isOn = true
+    @State private var isOn = false
     
     var body: some View {
         VStack {
@@ -26,12 +26,15 @@ struct ContentView: View {
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
                 .onChange(of: isOn){ value in
                     if value {
+                        print("start advertising")
                         BTModel.peripheralManager.startAdvertising([CBAdvertisementDataServiceUUIDsKey: [PhoneTransferService.serviceUUID]])
                     }
                     else {
+                        print("stop advertising")
                         BTModel.peripheralManager.stopAdvertising()
                     }
-                }.padding()
+                }
+                .padding()
         }
     
     }

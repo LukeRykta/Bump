@@ -11,9 +11,13 @@ struct WatchSplashView: View {
     @State private var isActive = false
     @State private var size = 0.80
     
+    let session = WKExtendedRuntimeSession()
+    
     var body: some View {
         if isActive {
-            ContentView()
+            AccelerometerView().onAppear(){
+                session.start()
+            }
         } else {
             VStack{
                 VStack(alignment: .center){
@@ -36,6 +40,23 @@ struct WatchSplashView: View {
             }
         }
     }
+}
+
+func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+    // Track when your session starts.
+    print("Extended runtime session started.")
+}
+
+func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+    // Finish and clean up any tasks before the session ends.
+    print("session ending...")
+}
+    
+func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
+    // Track when your session ends.
+    // Also handle errors here.
+    print("An error during extended runtime occured.")
+
 }
 
 struct WatchSplashView_Previews: PreviewProvider {

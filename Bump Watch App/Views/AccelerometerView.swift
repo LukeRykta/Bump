@@ -65,8 +65,10 @@ struct AccelerometerView: View {
                         valleyFlag = true
                         status = "Detected a bump, Initializing connection"
                         self.manager.stopAccelerometerUpdates()
+                        //BTModel.retrievePeripheral()
                         BTtext = BTModel.messageText
                         print(BTtext)
+                        WatchHapticManager.shared.playHaptic()
                     }
                     
                     //If we are outside of our window reset our states.
@@ -81,6 +83,8 @@ struct AccelerometerView: View {
             else {
                 self.status = "Not Available"
             }
+        }.onDisappear(){
+           // BTModel.cleanup()
         }
     }
     

@@ -27,7 +27,7 @@ class WatchBluetoothModel: NSObject, ObservableObject {
         self.centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
     }
     
-    private func retrievePeripheral() {
+    public func retrievePeripheral() {
         
         let connectedPeripherals: [CBPeripheral] = (self.centralManager.retrieveConnectedPeripherals(withServices: [WatchTransferService.serviceUUID]))
         
@@ -44,7 +44,7 @@ class WatchBluetoothModel: NSObject, ObservableObject {
         }
     }
     
-    private func cleanup() {
+    public func cleanup() {
         // Don't do anything if we're not connected
         guard let discoveredPeripheral = discoveredPeripheral,
             case .connected = discoveredPeripheral.state else { return }
@@ -146,7 +146,7 @@ extension WatchBluetoothModel: CBCentralManagerDelegate {
         
         // Reject if the signal strength is too low to attempt data transfer.
         // Change the minimum RSSI value depending on your app’s use case.
-        guard RSSI.intValue >= -50
+        guard RSSI.intValue >= -200
             else {
                 os_log("Discovered perhiperal not in expected range, at %d", RSSI.intValue)
                 return
