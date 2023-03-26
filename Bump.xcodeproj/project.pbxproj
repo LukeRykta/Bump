@@ -117,11 +117,7 @@
 		5E4E519129CF8D0C0088E5F6 /* Bump */ = {
 			isa = PBXGroup;
 			children = (
-
 				B5B7532D29CFAB8800F8BADF /* Model */,
-				B5B7532129CF90EF00F8BADF /* Views */,
-
-
 				5E4E519229CF8D0C0088E5F6 /* BumpApp.swift */,
 				5E4E519429CF8D0C0088E5F6 /* ContentView.swift */,
 				759A555A29CFB841008B6345 /* Bluetooth */,
@@ -319,19 +315,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4E519529CF8D0C0088E5F6 /* ContentView.swift in Sources */,
-
 				B5B7532A29CFA57E00F8BADF /* CircleView.swift in Sources */,
 				B5B7532829CFA13000F8BADF /* HomeView.swift in Sources */,
 				5E4E519329CF8D0C0088E5F6 /* BumpApp.swift in Sources */,
 				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
 				B5B7532C29CFA7AA00F8BADF /* UserEditView.swift in Sources */,
 				B5B7532F29CFABA500F8BADF /* User.swift in Sources */,
-
 				759A555D29CFB89C008B6345 /* PhoneBluetoothModel.swift in Sources */,
 				5E4E519329CF8D0C0088E5F6 /* BumpApp.swift in Sources */,
 				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
 				759A555E29CFB89C008B6345 /* PhoneTransferService.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = YD8DJRVHDC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
@@ -507,7 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = YD8DJRVHDC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
@@ -540,7 +533,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = YD8DJRVHDC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
@@ -573,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = YD8DJRVHDC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
