@@ -19,6 +19,7 @@ struct UserCardView: View {
                     .clipped()
                 Image(person.profileImage)
                     .resizable()
+                    .scaledToFill()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 60)
                     .clipShape(Circle())

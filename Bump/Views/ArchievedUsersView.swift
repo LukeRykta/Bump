@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ArchievedUsersView: View {
+    
     var body: some View {
         List{
             UserCardView(person: person1)
                 .listRowSeparator(.hidden)
             UserCardView(person: person2)
+        }.onAppear(){
+            //place function
         }
         .listStyle(.plain)
     }
