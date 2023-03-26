@@ -39,7 +39,7 @@ struct UserEditView: View {
                     //?
                 } label: {
                     Text("Follow")
-                        .padding(<#T##insets: EdgeInsets##EdgeInsets#>)
+                        .padding(20)
                 }
 
             }
