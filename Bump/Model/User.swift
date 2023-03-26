@@ -12,7 +12,7 @@ struct Person{
     let firstName: String
     let lastName: String
     let emailAddress: String
-    let phoneNumber: Int
+    let phoneNumber: String
 }
 
 let person1 = Person(profileImage: "person1", firstName: "Wesley", lastName: "Jackson", emailAddress: "wes.jackson@gmail.com", phoneNumber: 3183470543)
