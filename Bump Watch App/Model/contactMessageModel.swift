@@ -15,10 +15,23 @@ struct Contact {
 
 func transferStringtoContact(contactString: String) -> Contact {
     let contactComponents = contactString.components(separatedBy: ",")
-    let newContact = Contact(phoneNumber: contactComponents[0],
-                firstName: contactComponents[1],
-                lastName: contactComponents[2],
-                email: contactComponents[3])
+    var i : Int = 0
+    var newContact = Contact(phoneNumber: "", firstName: "", lastName: "", email: "")
+    for comp in contactComponents {
+        if i == 0{
+            newContact.phoneNumber = contactComponents[i]
+        }
+        if i == 1{
+            newContact.firstName = contactComponents[i]
+        }
+        if i == 2{
+            newContact.lastName = contactComponents[i]
+        }
+        if i == 3{
+            newContact.email = contactComponents[i]
+        }
+        i+=1
+    }
                 
     return newContact
 }

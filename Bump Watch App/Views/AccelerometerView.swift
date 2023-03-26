@@ -43,7 +43,7 @@ struct AccelerometerView: View {
             Text(status)
             Text(BTtext)
         }.onAppear{
-//            session.start()
+            //            session.start()
             if self.manager.isAccelerometerAvailable == true {
                 self.manager.startAccelerometerUpdates(to: self.queue){
                     (data: CMAccelerometerData?,error: Error?) in
@@ -65,25 +65,27 @@ struct AccelerometerView: View {
                     }
                     
                     //Detect valley and finish accelerometer updates.
+                    
                     else if (peakFlag == true && x < vthresholdMin && x > vthresholdMax && latency <= maxLatency){
                         valleyFlag = true
                         status = "Detected a bump, Initializing connection"
                         self.manager.stopAccelerometerUpdates()
                         //BTModel.retrievePeripheral()
-                        BTtext = BTModel.messageText
-                        //Parse BTModel.messageText
-                        let newContact = transferStringtoContact(contactString: BTModel.messageText)
+                        if BTModel.messageText.isEmpty{
+                            BTtext = String(",,,,")
+                        }
+                        else{
+                            BTtext = BTModel.messageText
+                        }
+                        //let defaultContact = Contact(phoneNumber: "0000000000", firstName: "John", lastName: "Doe", email: "west@gmail.com")
                         
-                        //let test = "\n" + newContact.phoneNumber
-                        print("new contact: \(newContact.phoneNumber)")
-                        print("SELF \(watchConnectionSession.userPhoneNumber)")
+                        let newContact: Contact = transferStringtoContact(contactString: BTtext)
                         
-                        if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) || self.watchConnectionSession.userPhoneNumber == "" {
+                        if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) {
                             print("Hit the if - for a different contact")
                             //Continue searching for signals
-                            BTModel.cleanup()
-                            BTModel.retrievePeripheral()
-                        
+                            //BTModel.retrievePeripheral()
+                            BTModel.startScanning()
                         }else{
                             print(BTtext)
                             print("Hit the else - for a different contact")
@@ -91,9 +93,8 @@ struct AccelerometerView: View {
                             //Send message via WatchConnectivity to Phone
                             sendMessageWatchConnect(message: BTModel.messageText, model: watchConnectionSession)
                         }
-                        
-                        
                     }
+                    
                     
                     //If we are outside of our window reset our states.
                     if (latency > maxLatency){
