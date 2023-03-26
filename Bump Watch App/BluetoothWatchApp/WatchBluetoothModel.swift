@@ -306,6 +306,15 @@ extension WatchBluetoothModel: CBPeripheralDelegate {
             // Dispatch the text view update to the main queue for updating the UI, because
             // we don't know which thread this method will be called back on.
             DispatchQueue.main.async() {
+                //If the contact is our own, don't continue with the connection and listen for another input.
+                //First parse the contact.
+                let newContact: Contact = transferStringtoContact(contactString: String(data: self.data, encoding: .utf8)!)
+                //Check the phone number if it matches
+                if newContact.phoneNumber == ownerContact.phoneNumber {
+                    cleanup()
+                }
+                //If it doesn't, recieve the message and put it in the central manager
+                
                 self.messageText = String(data: self.data, encoding: .utf8)!
             }
             
