@@ -10,7 +10,7 @@ import Contacts
 
 
 struct FirstInstallView: View {
-    @State private var firstTimeUser = false
+       @State private var firstTimeUser = false
        @State private var firstName = ""
        @State private var lastName = ""
        @State private var emailAddress = ""
