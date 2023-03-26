@@ -156,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				759A556D29D05152008B6345 /* Model */,
-				CAE834F929CFD10800F8BC6E /* WatchHaptic */,
 				5E4E51BA29CFACCB0088E5F6 /* Bump-Watch-App-Info.plist */,
 				5E4E51A429CF8D0D0088E5F6 /* BumpApp.swift */,
 				CAE834F929CFD10800F8BC6E /* WatchHaptic */,
@@ -543,6 +542,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = done;
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = hello;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -574,6 +575,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = done;
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = hello;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
 				LD_RUNPATH_SEARCH_PATHS = (

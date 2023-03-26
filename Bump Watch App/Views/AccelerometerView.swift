@@ -19,7 +19,7 @@ struct AccelerometerView: View {
     let queue = OperationQueue()
     
     //Create watchConnectivitySession
-    var watchConnectionSession = WatchSession()
+    @ObservedObject var watchConnectionSession = WatchSession()
     
     @State var x : Double = 0.0
     @State var status : String = ""
@@ -72,12 +72,16 @@ struct AccelerometerView: View {
                         //BTModel.retrievePeripheral()
                         BTtext = BTModel.messageText
                         //Parse BTModel.messageText
-                        var newContact = transferStringtoContact(contactString: BTModel.messageText)
-                        if newContact.phoneNumber == watchConnectionSession.userPhoneNumber{
+                        let newContact = transferStringtoContact(contactString: BTModel.messageText)
+                        print("new contact: \(newContact.phoneNumber)")
+                        print("SELF \(watchConnectionSession.userPhoneNumber)")
+                        if newContact.phoneNumber == self.watchConnectionSession.userPhoneNumber{
+                            print("Hit the if - for a different contact")
                             //Continue searching for signals
                             //NEEDS TO BE ADDED
                         }else{
                             print(BTtext)
+                            print("Hit the else - for a different contact")
                             WatchHapticManager.shared.playHaptic()
                             //Send message via WatchConnectivity to Phone
                             sendMessageWatchConnect(message: BTModel.messageText, model: watchConnectionSession)

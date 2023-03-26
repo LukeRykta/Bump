@@ -11,13 +11,17 @@ import WatchConnectivity
 class PhoneConnectivity: NSObject, WCSessionDelegate, ObservableObject{
     var session : WCSession
     @Published var newContactMessage = ""
-    @Published var userPhoneNumber = ""
+    var userPhoneNumber = ""
+    
     
     init(session: WCSession = .default) {
         self.session = session
         super.init()
         self.session.delegate = self
         session.activate()
+        let defaults = UserDefaults.standard
+        userPhoneNumber = defaults.string(forKey: "phoneNumber") ?? "0698675309"
+        
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {

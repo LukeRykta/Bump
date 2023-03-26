@@ -34,9 +34,6 @@ struct ContentView: View {
 
                         BTModel.peripheralManager.startAdvertising([CBAdvertisementDataServiceUUIDsKey: [PhoneTransferService.serviceUUID]])
                         
-                        
-                        
-                        
                     }
                     else {
                         print("stop advertising")
