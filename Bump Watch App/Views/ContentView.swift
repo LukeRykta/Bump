@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var BTModel = WatchBluetoothModel()
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(BTModel.messageText)
         }
         .padding()
     }
