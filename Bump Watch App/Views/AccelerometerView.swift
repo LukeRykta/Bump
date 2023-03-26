@@ -14,8 +14,21 @@ struct AccelerometerView: View {
     let queue = OperationQueue()
     let session = WKExtendedRuntimeSession()
     
-    @State var x : String = "0.0"
+    
+    
+    @State var x : Double = 0.0
     @State var status : String = ""
+    
+    @State var peakFlag : Bool = false
+    @State var valleyFlag : Bool = false
+    @State var latency : Int = 0
+    
+    //Variables to tune event detection
+    private var pthresholdMin : Double = 0.5   // Peak min threshold (in G's)
+    private var vthresholdMin : Double = -0.5  // Valley min threshold (in G's)
+    private var pthresholdMax : Double = 1.0   // Peak max threshold (in G's)
+    private var vthresholdMax : Double = -1.0  // Valley max threshold (in G's)
+    private var maxLatency : Int = 10
     
     var test: Double = 0.5;
     
@@ -32,11 +45,25 @@ struct AccelerometerView: View {
                     (data: CMAccelerometerData?,error: Error?) in
                     
                     let accelerometer: CMAcceleration = data!.acceleration
-                    x = "\(accelerometer.x)"
+                    x = accelerometer.x
                     print(x)
-                    if (accelerometer.x > test){
-                        print("SURPASSED")
+                    
+                    if (peakFlag == false && x > pthresholdMin && x < pthresholdMax){
+                        peakFlag = true
+                        status = "Peak detected"
                     }
+                    
+                    else if(peakFlag == true && x > vthresholdMin){
+                        latency += 1
+                        status = "Waiting for valley"
+                    }
+                    
+                    else if (peakFlag == true && x < vthresholdMin && x > vthresholdMax && latency <= maxLatency){
+                        valleyFlag = true
+                        status = "Detected a bump, Initializing connection"
+                        self.manager.stopAccelerometerUpdates()
+                    }
+                    print(status)
                 }
             }
             else {

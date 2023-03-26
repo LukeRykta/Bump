@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
     @ObservedObject private var BTModel = WatchBluetoothModel()
     var body: some View {
