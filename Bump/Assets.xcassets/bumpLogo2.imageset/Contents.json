@@ -3,8 +3,15 @@
     {
       "filename" : "bumpLogo2.jpg",
       "idiom" : "universal",
-      "platform" : "watchos",
-      "size" : "1024x1024"
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

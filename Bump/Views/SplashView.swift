@@ -17,7 +17,7 @@ struct SplashView: View {
         } else {
             VStack{
                 VStack(alignment: .center){
-                    Image("gojo")
+                    Image("bumpLogo2")
                         .resizable()
                 }
                 .scaleEffect(size,anchor: .center)
@@ -26,6 +26,7 @@ struct SplashView: View {
                         self.size = 0.42
                     }
                 }
+                .background(Color.black)
             }
             .onAppear{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){

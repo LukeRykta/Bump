@@ -19,12 +19,12 @@ class WatchBluetoothModel: NSObject, ObservableObject {
     var transferCharacteristic: CBCharacteristic?
     var writeIterationsComplete = 0
     var connectionIterationsComplete = 0
-    let defaultIterations = 5 // change this value based on test usecase
+    let defaultIterations = 100 // change this value based on test usecase
     var data = Data()
     
     override init(){
         super.init()
-        self.centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
+        centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
     }
     
     public func retrievePeripheral() {
@@ -135,6 +135,14 @@ extension WatchBluetoothModel: CBCentralManagerDelegate {
             return
         }
     }
+    
+    func startScanning() {
+        centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
+    }
+        
+    func stopScanning() {
+        centralManager.stopScan()
+    }
 
     /*
      *  This callback comes whenever a peripheral that is advertising the transfer serviceUUID is discovered.
@@ -206,11 +214,11 @@ extension WatchBluetoothModel: CBCentralManagerDelegate {
         self.discoveredPeripheral = nil
         
         // We're disconnected, so start scanning again
-        if connectionIterationsComplete < defaultIterations {
+//        if connectionIterationsComplete < defaultIterations {
             retrievePeripheral()
-        } else {
-            os_log("Connection iterations completed")
-        }
+//        } else {
+//            os_log("Connection iterations completed")
+//        }
     }
 
 }

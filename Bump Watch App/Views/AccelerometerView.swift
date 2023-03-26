@@ -8,13 +8,18 @@
 import SwiftUI
 import CoreMotion
 import CoreBluetooth
+import WatchConnectivity
 
 struct AccelerometerView: View {
     
     @ObservedObject private var BTModel = WatchBluetoothModel();
     
+    //Create Motion Manager & Operation's queue
     let manager = CMMotionManager()
     let queue = OperationQueue()
+    
+    //Create watchConnectivitySession
+    @ObservedObject var watchConnectionSession = WatchSession()
     
     @State var x : Double = 0.0
     @State var status : String = ""
@@ -38,8 +43,7 @@ struct AccelerometerView: View {
             Text(status)
             Text(BTtext)
         }.onAppear{
-//            session.start()
-            
+            //            session.start()
             if self.manager.isAccelerometerAvailable == true {
                 self.manager.startAccelerometerUpdates(to: self.queue){
                     (data: CMAccelerometerData?,error: Error?) in
@@ -61,15 +65,36 @@ struct AccelerometerView: View {
                     }
                     
                     //Detect valley and finish accelerometer updates.
+                    
                     else if (peakFlag == true && x < vthresholdMin && x > vthresholdMax && latency <= maxLatency){
                         valleyFlag = true
                         status = "Detected a bump, Initializing connection"
                         self.manager.stopAccelerometerUpdates()
                         //BTModel.retrievePeripheral()
-                        BTtext = BTModel.messageText
-                        print(BTtext)
-                        WatchHapticManager.shared.playHaptic()
+                        if BTModel.messageText.isEmpty{
+                            BTtext = String(",,,,")
+                        }
+                        else{
+                            BTtext = BTModel.messageText
+                        }
+                        //let defaultContact = Contact(phoneNumber: "0000000000", firstName: "John", lastName: "Doe", email: "west@gmail.com")
+                        
+                        let newContact: Contact = transferStringtoContact(contactString: BTtext)
+                        
+                        if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) {
+                            print("Hit the if - for a different contact")
+                            //Continue searching for signals
+                            //BTModel.retrievePeripheral()
+                            BTModel.startScanning()
+                        }else{
+                            print(BTtext)
+                            print("Hit the else - for a different contact")
+                            WatchHapticManager.shared.playHaptic()
+                            //Send message via WatchConnectivity to Phone
+                            sendMessageWatchConnect(message: BTModel.messageText, model: watchConnectionSession)
+                        }
                     }
+                    
                     
                     //If we are outside of our window reset our states.
                     if (latency > maxLatency){
@@ -83,11 +108,8 @@ struct AccelerometerView: View {
             else {
                 self.status = "Not Available"
             }
-        }.onDisappear(){
-           // BTModel.cleanup()
         }
     }
-    
 }
 
 struct AccelerometerView_Previews: PreviewProvider {
