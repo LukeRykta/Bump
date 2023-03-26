@@ -21,7 +21,7 @@ struct FirstInstallView: View {
         let emailAddressPredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         let namePredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Za-z]{1,15}")
         let numberPredicate = NSPredicate(format: "SELF MATCHES %@", "[0-9]{10}")
-       @State private var firstTimeUser = false
+       @AppStorage("firstTimeUser") private var firstTimeUser = false
        @State private var firstName = ""
        @State private var lastName = ""
        @State private var emailAddress = ""
