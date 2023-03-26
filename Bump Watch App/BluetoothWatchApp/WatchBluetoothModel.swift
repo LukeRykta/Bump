@@ -24,7 +24,7 @@ class WatchBluetoothModel: NSObject, ObservableObject {
     
     override init(){
         super.init()
-        self.centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
+        centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
     }
     
     public func retrievePeripheral() {

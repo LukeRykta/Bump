@@ -8,13 +8,18 @@
 import SwiftUI
 import CoreMotion
 import CoreBluetooth
+import WatchConnectivity
 
 struct AccelerometerView: View {
     
     @ObservedObject private var BTModel = WatchBluetoothModel();
     
+    //Create Motion Manager & Operation's queue
     let manager = CMMotionManager()
     let queue = OperationQueue()
+    
+    //Create watchConnectivitySession
+    @ObservedObject var watchConnectionSession = WatchSession()
     
     @State var x : Double = 0.0
     @State var status : String = ""
@@ -39,7 +44,6 @@ struct AccelerometerView: View {
             Text(BTtext)
         }.onAppear{
 //            session.start()
-            
             if self.manager.isAccelerometerAvailable == true {
                 self.manager.startAccelerometerUpdates(to: self.queue){
                     (data: CMAccelerometerData?,error: Error?) in
@@ -67,8 +71,28 @@ struct AccelerometerView: View {
                         self.manager.stopAccelerometerUpdates()
                         //BTModel.retrievePeripheral()
                         BTtext = BTModel.messageText
-                        print(BTtext)
-                        WatchHapticManager.shared.playHaptic()
+                        //Parse BTModel.messageText
+                        let newContact = transferStringtoContact(contactString: BTModel.messageText)
+                        
+                        //let test = "\n" + newContact.phoneNumber
+                        print("new contact: \(newContact.phoneNumber)")
+                        print("SELF \(watchConnectionSession.userPhoneNumber)")
+                        
+                        if self.watchConnectionSession.userPhoneNumber.contains(newContact.phoneNumber) || self.watchConnectionSession.userPhoneNumber == "" {
+                            print("Hit the if - for a different contact")
+                            //Continue searching for signals
+                            BTModel.cleanup()
+                            BTModel.retrievePeripheral()
+                        
+                        }else{
+                            print(BTtext)
+                            print("Hit the else - for a different contact")
+                            WatchHapticManager.shared.playHaptic()
+                            //Send message via WatchConnectivity to Phone
+                            sendMessageWatchConnect(message: BTModel.messageText, model: watchConnectionSession)
+                        }
+                        
+                        
                     }
                     
                     //If we are outside of our window reset our states.
