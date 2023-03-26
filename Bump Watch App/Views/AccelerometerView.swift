@@ -8,13 +8,18 @@
 import SwiftUI
 import CoreMotion
 import CoreBluetooth
+import WatchConnectivity
 
 struct AccelerometerView: View {
     
     @ObservedObject private var BTModel = WatchBluetoothModel();
     
+    //Create Motion Manager & Operation's queue
     let manager = CMMotionManager()
     let queue = OperationQueue()
+    
+    //Create watchConnectivitySession
+    var watchConnectionSession = WatchSession()
     
     @State var x : Double = 0.0
     @State var status : String = ""

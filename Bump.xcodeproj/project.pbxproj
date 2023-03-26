@@ -20,6 +20,7 @@
 		759A555E29CFB89C008B6345 /* PhoneTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A555C29CFB89C008B6345 /* PhoneTransferService.swift */; };
 		759A556129CFB8B2008B6345 /* WatchBluetoothModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A555F29CFB8B1008B6345 /* WatchBluetoothModel.swift */; };
 		759A556229CFB8B2008B6345 /* WatchTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A556029CFB8B2008B6345 /* WatchTransferService.swift */; };
+		759A556829D044A4008B6345 /* WatchConnectivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A556729D044A4008B6345 /* WatchConnectivityModel.swift */; };
 		75C3038029CF8ECA00BCED9D /* AccelerometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */; };
 		B51982EE29CFD9B40082FE88 /* ArchievedUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51982ED29CFD9B40082FE88 /* ArchievedUsersView.swift */; };
 		B53F8FD629CFE0AA00E608B5 /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F8FD529CFE0AA00E608B5 /* UserCardView.swift */; };
@@ -73,6 +74,7 @@
 		759A555C29CFB89C008B6345 /* PhoneTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneTransferService.swift; sourceTree = "<group>"; };
 		759A555F29CFB8B1008B6345 /* WatchBluetoothModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchBluetoothModel.swift; sourceTree = "<group>"; };
 		759A556029CFB8B2008B6345 /* WatchTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchTransferService.swift; sourceTree = "<group>"; };
+		759A556729D044A4008B6345 /* WatchConnectivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityModel.swift; sourceTree = "<group>"; };
 		75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerView.swift; sourceTree = "<group>"; };
 		B51982ED29CFD9B40082FE88 /* ArchievedUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchievedUsersView.swift; sourceTree = "<group>"; };
 		B53F8FD529CFE0AA00E608B5 /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		5E4E51A329CF8D0D0088E5F6 /* Bump Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				759A556929D04928008B6345 /* WatchConnectivity */,
 				CAE834F929CFD10800F8BC6E /* WatchHaptic */,
 				5E4E51BA29CFACCB0088E5F6 /* Bump-Watch-App-Info.plist */,
 				5E4E51A429CF8D0D0088E5F6 /* BumpApp.swift */,
@@ -173,6 +176,7 @@
 			children = (
 				5E4E51A629CF8D0D0088E5F6 /* ContentView.swift */,
 				75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */,
+				759A556729D044A4008B6345 /* WatchConnectivityModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +197,13 @@
 				759A555C29CFB89C008B6345 /* PhoneTransferService.swift */,
 			);
 			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		759A556929D04928008B6345 /* WatchConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WatchConnectivity;
 			sourceTree = "<group>";
 		};
 		B5B7532129CF90EF00F8BADF /* Views */ = {
@@ -369,6 +380,7 @@
 				B5B7532629CF975700F8BADF /* WatchSplashView.swift in Sources */,
 				5E4E51A729CF8D0D0088E5F6 /* ContentView.swift in Sources */,
 				759A556229CFB8B2008B6345 /* WatchTransferService.swift in Sources */,
+				759A556829D044A4008B6345 /* WatchConnectivityModel.swift in Sources */,
 				5E4E51A529CF8D0D0088E5F6 /* BumpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
