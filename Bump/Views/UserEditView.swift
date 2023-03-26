@@ -39,9 +39,7 @@ struct UserEditView: View {
                     //?
                 } label: {
                     Text("Follow")
-
                         .padding(20)
-
                 }
 
             }
