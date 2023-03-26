@@ -26,7 +26,7 @@ struct WatchSplashView: View {
                 }
                 .scaleEffect(size,anchor: .center)
                 .onAppear{
-                    withAnimation(.easeOut(duration: 2.2)){
+                    withAnimation(.easeOut(duration: 0.5)){
                         self.size = 0.42
                     }
                 }
