@@ -11,7 +11,8 @@ struct ContentView: View {
    
     @ObservedObject private var BTModel = PhoneBluetoothModel()
     @State private var isOn = true
-    
+    let userDefaults = UserDefaults.standard
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -21,12 +22,14 @@ struct ContentView: View {
         }
         .padding()
         HStack{
-            
             Toggle("Advertise as Peripheral", isOn: $isOn)
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
                 .onChange(of: isOn){ value in
                     if value {
+                        BTModel.messageText = "\(userDefaults.string(forKey: "phoneNumber") ?? "0698675309"),\(userDefaults.string(forKey: "firstName") ?? "John"),\(userDefaults.string(forKey: "lastName") ?? "John"),\(userDefaults.string(forKey: "emailAddress") ?? "john.doe@gmail.com")"
                         BTModel.peripheralManager.startAdvertising([CBAdvertisementDataServiceUUIDsKey: [PhoneTransferService.serviceUUID]])
+                        
+                        
                     }
                     else {
                         BTModel.peripheralManager.stopAdvertising()

@@ -23,6 +23,7 @@
 		75C3038029CF8ECA00BCED9D /* AccelerometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */; };
 		B51982EE29CFD9B40082FE88 /* ArchievedUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51982ED29CFD9B40082FE88 /* ArchievedUsersView.swift */; };
 		B53F8FD629CFE0AA00E608B5 /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F8FD529CFE0AA00E608B5 /* UserCardView.swift */; };
+		B53F8FD829D01B5700E608B5 /* FirstInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F8FD729D01B5700E608B5 /* FirstInstallView.swift */; };
 		B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532229CF90FD00F8BADF /* SplashView.swift */; };
 		B5B7532629CF975700F8BADF /* WatchSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532529CF975700F8BADF /* WatchSplashView.swift */; };
 		B5B7532829CFA13000F8BADF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532729CFA13000F8BADF /* HomeView.swift */; };
@@ -75,6 +76,7 @@
 		75C3037F29CF8ECA00BCED9D /* AccelerometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerView.swift; sourceTree = "<group>"; };
 		B51982ED29CFD9B40082FE88 /* ArchievedUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchievedUsersView.swift; sourceTree = "<group>"; };
 		B53F8FD529CFE0AA00E608B5 /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
+		B53F8FD729D01B5700E608B5 /* FirstInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInstallView.swift; sourceTree = "<group>"; };
 		B5B7532229CF90FD00F8BADF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B5B7532529CF975700F8BADF /* WatchSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSplashView.swift; sourceTree = "<group>"; };
 		B5B7532729CFA13000F8BADF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				B5B7532929CFA57E00F8BADF /* CircleView.swift */,
 				B51982ED29CFD9B40082FE88 /* ArchievedUsersView.swift */,
 				B53F8FD529CFE0AA00E608B5 /* UserCardView.swift */,
+				B53F8FD729D01B5700E608B5 /* FirstInstallView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				5E4E519529CF8D0C0088E5F6 /* ContentView.swift in Sources */,
 				B5B7532A29CFA57E00F8BADF /* CircleView.swift in Sources */,
 				B5B7532829CFA13000F8BADF /* HomeView.swift in Sources */,
+				B53F8FD829D01B5700E608B5 /* FirstInstallView.swift in Sources */,
 				5E4E519329CF8D0C0088E5F6 /* BumpApp.swift in Sources */,
 				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
 				B5B7532F29CFABA500F8BADF /* User.swift in Sources */,
@@ -565,6 +569,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Getting Access to Contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -598,6 +603,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Getting Access to Contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
