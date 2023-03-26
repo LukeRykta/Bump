@@ -15,7 +15,6 @@ struct AccelerometerView: View {
     
     let manager = CMMotionManager()
     let queue = OperationQueue()
-    let session = WKExtendedRuntimeSession()
     
     @State var x : Double = 0.0
     @State var status : String = ""
@@ -39,7 +38,7 @@ struct AccelerometerView: View {
             Text(status)
             Text(BTtext)
         }.onAppear{
-            session.start()
+//            session.start()
             
             if self.manager.isAccelerometerAvailable == true {
                 self.manager.startAccelerometerUpdates(to: self.queue){
@@ -66,8 +65,10 @@ struct AccelerometerView: View {
                         valleyFlag = true
                         status = "Detected a bump, Initializing connection"
                         self.manager.stopAccelerometerUpdates()
+                        //BTModel.retrievePeripheral()
                         BTtext = BTModel.messageText
                         print(BTtext)
+                        WatchHapticManager.shared.playHaptic()
                     }
                     
                     //If we are outside of our window reset our states.
@@ -82,25 +83,12 @@ struct AccelerometerView: View {
             else {
                 self.status = "Not Available"
             }
+        }.onDisappear(){
+           // BTModel.cleanup()
         }
     }
     
 }
-
-func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
-    // Track when your session starts.
-    print("did start")
-}
-
-func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
-    // Finish and clean up any tasks before the session ends.
-}
-    
-func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
-    // Track when your session ends.
-    // Also handle errors here.
-}
-
 
 struct AccelerometerView_Previews: PreviewProvider {
     static var previews: some View {

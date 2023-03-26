@@ -144,7 +144,7 @@ extension PhoneBluetoothModel: CBPeripheralManagerDelegate {
         switch peripheral.state {
         case .poweredOn:
             // ... so start working with the peripheral
-            os_log("CBManager is powered on")
+            os_log("P: CBManager is powered on")
             setupPeripheral()
         case .poweredOff:
             os_log("CBManager is not powered on")
