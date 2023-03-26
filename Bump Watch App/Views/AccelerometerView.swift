@@ -63,6 +63,11 @@ struct AccelerometerView: View {
                         status = "Detected a bump, Initializing connection"
                         self.manager.stopAccelerometerUpdates()
                     }
+                    if (latency > maxLatency){
+                        peakFlag = false
+                        valleyFlag = false
+                        latency = 0
+                    }
                     print(status)
                 }
             }
