@@ -40,7 +40,7 @@ struct ContentView: View {
                         print("stop advertising")
                         BTModel.peripheralManager.stopAdvertising()
                         let newPerson: Person = transferStringtoPerson(personString:  WKModel.newContactMessage)
-                        saveContact(person: newPerson)
+                        addContact(person: newPerson)
                     }
                 }
                 .padding()

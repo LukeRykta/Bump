@@ -27,6 +27,7 @@
 		B51982EE29CFD9B40082FE88 /* ArchievedUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51982ED29CFD9B40082FE88 /* ArchievedUsersView.swift */; };
 		B53F8FD629CFE0AA00E608B5 /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F8FD529CFE0AA00E608B5 /* UserCardView.swift */; };
 		B53F8FD829D01B5700E608B5 /* FirstInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F8FD729D01B5700E608B5 /* FirstInstallView.swift */; };
+		B5AC6CAD29D0BEF50005ECA1 /* ContactAddFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC6CAC29D0BEF50005ECA1 /* ContactAddFunction.swift */; };
 		B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532229CF90FD00F8BADF /* SplashView.swift */; };
 		B5B7532629CF975700F8BADF /* WatchSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532529CF975700F8BADF /* WatchSplashView.swift */; };
 		B5B7532829CFA13000F8BADF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532729CFA13000F8BADF /* HomeView.swift */; };
@@ -83,6 +84,7 @@
 		B51982ED29CFD9B40082FE88 /* ArchievedUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchievedUsersView.swift; sourceTree = "<group>"; };
 		B53F8FD529CFE0AA00E608B5 /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
 		B53F8FD729D01B5700E608B5 /* FirstInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInstallView.swift; sourceTree = "<group>"; };
+		B5AC6CAC29D0BEF50005ECA1 /* ContactAddFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddFunction.swift; sourceTree = "<group>"; };
 		B5B7532229CF90FD00F8BADF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B5B7532529CF975700F8BADF /* WatchSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSplashView.swift; sourceTree = "<group>"; };
 		B5B7532729CFA13000F8BADF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B7532E29CFABA500F8BADF /* User.swift */,
+				B5AC6CAC29D0BEF50005ECA1 /* ContactAddFunction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				B53F8FD629CFE0AA00E608B5 /* UserCardView.swift in Sources */,
 				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
 				CAE834F829CFCEF000F8BC6E /* HapticManager.swift in Sources */,
+				B5AC6CAD29D0BEF50005ECA1 /* ContactAddFunction.swift in Sources */,
 				759A555E29CFB89C008B6345 /* PhoneTransferService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,21 +541,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = BFAYZ52TYC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = done;
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = hello;
+				INFOPLIST_KEY_NSContactsUsageDescription = Access;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -570,21 +576,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = BFAYZ52TYC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = done;
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = hello;
+				INFOPLIST_KEY_NSContactsUsageDescription = Access;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump3;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = rowdy23.fuji.Bump10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -605,10 +613,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = BFAYZ52TYC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "cup them";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = done;
 				INFOPLIST_KEY_NSContactsUsageDescription = "Getting Access to Contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -621,7 +631,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -639,10 +649,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = BFAYZ52TYC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "cup them";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = done;
 				INFOPLIST_KEY_NSContactsUsageDescription = "Getting Access to Contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -655,7 +667,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump3;
+				PRODUCT_BUNDLE_IDENTIFIER = rowdy23.fuji.Bump10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
