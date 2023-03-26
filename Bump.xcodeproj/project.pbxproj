@@ -27,6 +27,8 @@
 		B5B7532A29CFA57E00F8BADF /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532929CFA57E00F8BADF /* CircleView.swift */; };
 		B5B7532C29CFA7AA00F8BADF /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532B29CFA7AA00F8BADF /* UserEditView.swift */; };
 		B5B7532F29CFABA500F8BADF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7532E29CFABA500F8BADF /* User.swift */; };
+		CAE834F829CFCEF000F8BC6E /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE834F729CFCEF000F8BC6E /* HapticManager.swift */; };
+		CAE834FB29CFD11F00F8BC6E /* WatchHapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE834FA29CFD11F00F8BC6E /* WatchHapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		B5B7532929CFA57E00F8BADF /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		B5B7532B29CFA7AA00F8BADF /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		B5B7532E29CFABA500F8BADF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CAE834F729CFCEF000F8BC6E /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		CAE834FA29CFD11F00F8BC6E /* WatchHapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +121,8 @@
 		5E4E519129CF8D0C0088E5F6 /* Bump */ = {
 			isa = PBXGroup;
 			children = (
-
+				CAE834F629CFCEDA00F8BC6E /* Haptic */,
 				B5B7532D29CFAB8800F8BADF /* Model */,
-				B5B7532129CF90EF00F8BADF /* Views */,
-
-
 				5E4E519229CF8D0C0088E5F6 /* BumpApp.swift */,
 				5E4E519429CF8D0C0088E5F6 /* ContentView.swift */,
 				759A555A29CFB841008B6345 /* Bluetooth */,
@@ -143,6 +144,7 @@
 		5E4E51A329CF8D0D0088E5F6 /* Bump Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				CAE834F929CFD10800F8BC6E /* WatchHaptic */,
 				5E4E51BA29CFACCB0088E5F6 /* Bump-Watch-App-Info.plist */,
 				5E4E51A429CF8D0D0088E5F6 /* BumpApp.swift */,
 				B5B7532429CF974000F8BADF /* WatchViews */,
@@ -214,6 +216,22 @@
 				B5B7532E29CFABA500F8BADF /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CAE834F629CFCEDA00F8BC6E /* Haptic */ = {
+			isa = PBXGroup;
+			children = (
+				CAE834F729CFCEF000F8BC6E /* HapticManager.swift */,
+			);
+			path = Haptic;
+			sourceTree = "<group>";
+		};
+		CAE834F929CFD10800F8BC6E /* WatchHaptic */ = {
+			isa = PBXGroup;
+			children = (
+				CAE834FA29CFD11F00F8BC6E /* WatchHapticManager.swift */,
+			);
+			path = WatchHaptic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,19 +337,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4E519529CF8D0C0088E5F6 /* ContentView.swift in Sources */,
-
 				B5B7532A29CFA57E00F8BADF /* CircleView.swift in Sources */,
 				B5B7532829CFA13000F8BADF /* HomeView.swift in Sources */,
 				5E4E519329CF8D0C0088E5F6 /* BumpApp.swift in Sources */,
 				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
 				B5B7532C29CFA7AA00F8BADF /* UserEditView.swift in Sources */,
 				B5B7532F29CFABA500F8BADF /* User.swift in Sources */,
-
 				759A555D29CFB89C008B6345 /* PhoneBluetoothModel.swift in Sources */,
 				5E4E519329CF8D0C0088E5F6 /* BumpApp.swift in Sources */,
 				B5B7532329CF90FD00F8BADF /* SplashView.swift in Sources */,
+				CAE834F829CFCEF000F8BC6E /* HapticManager.swift in Sources */,
 				759A555E29CFB89C008B6345 /* PhoneTransferService.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE834FB29CFD11F00F8BC6E /* WatchHapticManager.swift in Sources */,
 				75C3038029CF8ECA00BCED9D /* AccelerometerView.swift in Sources */,
 				759A556129CFB8B2008B6345 /* WatchBluetoothModel.swift in Sources */,
 				B5B7532629CF975700F8BADF /* WatchSplashView.swift in Sources */,
@@ -476,7 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = WK88YQ45B6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
@@ -507,7 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = WK88YQ45B6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bump-Watch-App-Info.plist";
@@ -540,7 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = WK88YQ45B6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
@@ -573,7 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bump/Preview Content\"";
-				DEVELOPMENT_TEAM = GPM74XSJN5;
+				DEVELOPMENT_TEAM = WK88YQ45B6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bump;
