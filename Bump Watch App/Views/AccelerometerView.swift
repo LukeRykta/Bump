@@ -75,6 +75,7 @@ struct AccelerometerView: View {
                         var newContact = transferStringtoContact(contactString: BTModel.messageText)
                         if newContact.phoneNumber == watchConnectionSession.userPhoneNumber{
                             //Continue searching for signals
+                            //NEEDS TO BE ADDED
                         }else{
                             print(BTtext)
                             WatchHapticManager.shared.playHaptic()

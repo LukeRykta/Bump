@@ -38,4 +38,10 @@ class PhoneConnectivity: NSObject, WCSessionDelegate, ObservableObject{
     }
     
 }
-import Foundation
+
+func sendMessagetoWatchConnect(message: String, model: PhoneConnectivity) {
+        model.session.sendMessage(["message": message], replyHandler: nil){
+            (error) in
+            print(error.localizedDescription)
+        }
+}
