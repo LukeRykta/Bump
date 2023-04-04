@@ -17,13 +17,14 @@ struct UserCardView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 80)
                     .clipped()
-                Image("gojo")
+                Image("person1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 60)
+                    .frame(maxHeight: 200)
                     .clipShape(Circle())
-                    .offset(y: 40)
                     .padding(.horizontal)
+                    .scaledToFit()
+                    .offset(y: 22)
             }
             VStack(spacing: 0.0){
                 HStack(){
@@ -42,8 +43,8 @@ struct UserCardView: View {
                     .font(.footnote)
             }
         }
-        .cornerRadius(20)
         .background(Color(.tertiarySystemFill))
+        .cornerRadius(20)
     }
 }
 struct UserCardView_Previews: PreviewProvider {
