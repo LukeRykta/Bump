@@ -12,15 +12,14 @@ struct CircleImage: View {
 
     var body: some View {
         image
-            .frame(minWidth: 100)
+            .resizable()
+            .frame(maxHeight: 900)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-        
+            .scaledToFit()
             .overlay {
                 Circle().stroke(.white, lineWidth: 4)
             }
             .shadow(radius: 7)
-            .scaledToFit()
-            
     }
 }
 
